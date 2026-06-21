@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const BACKEND_URL = "http://localhost:8000";
+  const BACKEND_URL = "https://mitchell-legal-chatbot-backend-production.up.railway.app";
   const WIDGET_COLOR = "#2d2d2d";
   const BUSINESS_NAME = "Mitchell Legal Consulting";
 
