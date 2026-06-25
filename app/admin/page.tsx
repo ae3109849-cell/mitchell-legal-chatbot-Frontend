@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import LoginForm from "@/app/admin/LoginForm";
 
-export default function AdminPage() {
-  redirect("/admin/dashboard");
+export default function AdminLoginPage() {
+  return <LoginForm />;
 }
