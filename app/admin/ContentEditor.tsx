@@ -146,16 +146,21 @@ export default function ContentEditor() {
 
         <div className="mt-8 bg-white rounded-2xl border border-gray-200 shadow-sm p-8">
           <h2 className="text-base font-semibold text-gray-900 mb-4">
-            Embed Your Widget
+            Go to chatbot
           </h2>
           <p className="text-sm text-gray-500 mb-4">
-            Copy this script tag and paste it before the closing{" "}
-            <code className="bg-gray-100 px-1 py-0.5 rounded text-xs">&lt;/body&gt;</code>{" "}
-            tag on any webpage.
+            Click the link below to open the chatbot.
           </p>
-          <div className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 font-mono text-xs text-gray-800 break-all select-all">
-            {`<script src="http://localhost:8000/widget.js" defer></script>`}
-          </div>
+          
+          {/* FIX: Added the opening <a tag here */}
+          <a
+            href="https://mitchell-legal-chatbot-frontend.vercel.app/widget"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 font-mono text-xs text-blue-600 hover:underline break-all"
+          >
+            https://mitchell-legal-chatbot-frontend.vercel.app/widget
+          </a>
         </div>
       </main>
     </div>
