@@ -19,13 +19,8 @@ export default function ContentEditor() {
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
   useEffect(() => {
-    const token = getToken();
-    if (!token) {
-      router.push("/admin");
-      return;
-    }
-    loadContent(token);
-  }, [router]);
+    loadContent(getToken() ?? "");
+  }, []);
 
   async function loadContent(token: string) {
     try {
@@ -40,8 +35,7 @@ export default function ContentEditor() {
   }
 
   async function handleSave() {
-    const token = getToken();
-    if (!token) return router.push("/admin");
+    const token = getToken() ?? "";
 
     setSaving(true);
     setMessage(null);
@@ -61,13 +55,12 @@ export default function ContentEditor() {
   }
 
   function handleAuthError() {
-    clearToken();
-    router.push("/admin");
+    setMessage({ type: "error", text: "Could not load content from the server." });
   }
 
   function handleLogout() {
     clearToken();
-    router.push("/admin");
+    router.push("/admin/dashboard");
   }
 
   if (loading) {
